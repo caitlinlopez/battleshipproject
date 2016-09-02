@@ -1,17 +1,19 @@
 body {
-    margin: 60px auto;
+    margin: 20px auto;
     width: 70%;
     max-width: 950px;
     text-align: center;
+    font-family: "Arial", Arial, sans-serif;
+    background-color: #aec6cf;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
 p, button, input {
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.4em;
     color: #333;
 	margin-bottom:1em;

@@ -66,6 +66,19 @@ var gameBoard = [
 
 function fireTorpedo() {
 
-	// Your game logic will go here!
+	var launchTorpedo = $("#textBox").val();
+	var rowLT = launchTorpedo.substring(0, 1);
+	var columnLT = launchTorpedo.substring(1,3);
+	var letterR = letterConversion[rowLT];
+	var letterC = columnLT - 1;
+	var together = 's' + letterR + letterC;
 
+	if(square.id = together){
+		console.log(together);
+		$("#" + together).css("background-color", "red");
+	}
+	//else(){
+		//console.log(together);
+		//$("#" + together).css("background-color", "gray");
+	//}
 }
