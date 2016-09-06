@@ -64,21 +64,38 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
+var shipsHit = 0;
+
 function fireTorpedo() {
+
+	var gameOver = false;
 
 	var launchTorpedo = $("#textBox").val();
 	var rowLT = launchTorpedo.substring(0, 1);
 	var columnLT = launchTorpedo.substring(1,3);
+
 	var letterR = letterConversion[rowLT];
 	var letterC = columnLT - 1;
 	var together = 's' + letterR + letterC;
+	var battleShip = gameBoard[letterR][letterC];
 
-	if(square.id = together){
+	if(battleShip == 1){
 		console.log(together);
 		$("#" + together).css("background-color", "red");
+		shipsHit += 1;
 	}
-	//else(){
-		//console.log(together);
-		//$("#" + together).css("background-color", "gray");
-	//}
+	else{
+		$("#" + together).css("background-color", "grey");
+	}
+
+console.log(coordinates);
+
+if(shipsHit == 17){
+	gameOver = true;
+}
+
+if(gameOver){
+	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS");
+}
+
 }
