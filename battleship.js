@@ -18,7 +18,18 @@ var letterConversion = {
 	"G": 6,
 	"H": 7,
 	"I": 8,
-	"J": 9
+	"J": 9,
+	"a": 0,
+	"b": 1,
+	"c": 2,
+	"d": 3,
+	"e": 4,
+	"f": 5,
+	"g": 6,
+	"h": 7,
+	"i": 8,
+	"j": 9
+
 }
 
 var cArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
@@ -65,10 +76,11 @@ var gameBoard = [
 				]
 
 var shipsHit = 0;
+var gameOver = false;
 
 function fireTorpedo() {
 
-	var gameOver = false;
+
 
 	var launchTorpedo = $("#textBox").val();
 	var rowLT = launchTorpedo.substring(0, 1);
@@ -82,20 +94,23 @@ function fireTorpedo() {
 	if(battleShip == 1){
 		console.log(together);
 		$("#" + together).css("background-color", "red");
-		shipsHit += 1;
+		shipsHit++;
+		console.log(shipsHit);
 	}
 	else{
 		$("#" + together).css("background-color", "grey");
 	}
 
-console.log(coordinates);
+}
 
 if(shipsHit == 17){
 	gameOver = true;
+	console.log("working");
+}
+else{
+	console.log("no");
 }
 
-if(gameOver){
+if(gameOver == true){
 	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS");
-}
-
 }
