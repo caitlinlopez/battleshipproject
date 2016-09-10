@@ -80,8 +80,6 @@ var gameOver = false;
 
 function fireTorpedo() {
 
-
-
 	var launchTorpedo = $("#textBox").val();
 	var rowLT = launchTorpedo.substring(0, 1);
 	var columnLT = launchTorpedo.substring(1,3);
@@ -93,24 +91,35 @@ function fireTorpedo() {
 
 	if(battleShip == 1){
 		console.log(together);
-		$("#" + together).css("background-color", "red");
+		$("#" + together).css("background-color", "#ff6961");
 		shipsHit++;
 		console.log(shipsHit);
 	}
 	else{
-		$("#" + together).css("background-color", "grey");
+		$("#" + together).css("background-color", "transparent");
 	}
 
+	if(shipsHit == 17){
+		gameOver = true;
+		console.log("working");
+	}
+	else{
+		console.log("no");
+	}
+
+	if(gameOver == true){
+		$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS");
+		$("#inputBox").fadeOut();
+	}
+
+
 }
 
-if(shipsHit == 17){
-	gameOver = true;
-	console.log("working");
-}
-else{
-	console.log("no");
-}
 
-if(gameOver == true){
-	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS");
+
+function addShip(){
+
+	var aShip = $("#textBox").val();
+	var rowAS = aShip.substring(0, 1);
+	var columnAS = aShip.substring(1,3);
 }
